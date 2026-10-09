@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>个人 AI 知识库 · 数据流</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #0B1220; }
+  svg { display: block; }
+  text { font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif; }
+</style>
+</head>
+<body>
+<svg width="2000" height="1080" viewBox="0 0 2000 1080">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8B9BB4"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FB923C"/>
+    </marker>
+    <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M100 0 H0 V100" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="2000" height="1080" fill="#0B1220"/>
+  <rect width="2000" height="1080" fill="url(#grid)"/>
+
+  <!-- 标题 -->
+  <text x="60" y="72" font-size="34" font-weight="700" fill="#F1F5F9">个人 AI 知识库 · 数据流</text>
+  <text x="60" y="112" font-size="18" fill="#64748B">进 → 存（分层）→ 取 · 开源通用版</text>
+
+  <!-- ===== 进 ===== -->
+  <g>
+    <rect x="80" y="300" width="260" height="90" rx="10" fill="rgba(45,212,191,0.08)" stroke="#2DD4BF" stroke-width="1.5"/>
+    <text x="210" y="340" font-size="22" font-weight="700" fill="#F1F5F9" text-anchor="middle">链接 / 文档</text>
+    <text x="210" y="368" font-size="15" fill="#94A3B8" text-anchor="middle">外部资料</text>
+  </g>
+  <g>
+    <rect x="430" y="300" width="260" height="90" rx="10" fill="rgba(148,163,184,0.08)" stroke="#94A3B8" stroke-width="1.5"/>
+    <text x="560" y="340" font-size="22" font-weight="700" fill="#F1F5F9" text-anchor="middle">raw 原文</text>
+    <text x="560" y="368" font-size="15" fill="#94A3B8" text-anchor="middle">原料层 · 只读 · 含原始链接</text>
+  </g>
+  <g>
+    <rect x="790" y="300" width="260" height="90" rx="10" fill="rgba(52,211,153,0.08)" stroke="#34D399" stroke-width="1.5"/>
+    <text x="920" y="340" font-size="22" font-weight="700" fill="#F1F5F9" text-anchor="middle">单源笔记</text>
+    <text x="920" y="368" font-size="15" fill="#94A3B8" text-anchor="middle">一条原料一篇 · 总结 + 标签</text>
+  </g>
+  <g>
+    <rect x="790" y="470" width="260" height="90" rx="10" fill="rgba(52,211,153,0.08)" stroke="#34D399" stroke-width="1.5"/>
+    <text x="920" y="510" font-size="22" font-weight="700" fill="#F1F5F9" text-anchor="middle">项目页</text>
+    <text x="920" y="538" font-size="15" fill="#94A3B8" text-anchor="middle">多篇单源笔记综合（多对一）</text>
+  </g>
+  <g>
+    <rect x="80" y="640" width="260" height="90" rx="10" fill="rgba(45,212,191,0.08)" stroke="#2DD4BF" stroke-width="1.5"/>
+    <text x="210" y="680" font-size="22" font-weight="700" fill="#F1F5F9" text-anchor="middle">想法 / 话语</text>
+    <text x="210" y="708" font-size="15" fill="#94A3B8" text-anchor="middle">手动输入</text>
+  </g>
+  <g>
+    <rect x="790" y="640" width="260" height="90" rx="10" fill="rgba(52,211,153,0.08)" stroke="#34D399" stroke-width="1.5"/>
+    <text x="920" y="680" font-size="22" font-weight="700" fill="#F1F5F9" text-anchor="middle">想法笔记</text>
+    <text x="920" y="708" font-size="15" fill="#94A3B8" text-anchor="middle">全文即知识</text>
+  </g>
+
+  <!-- ===== 存：目录层 ===== -->
+  <g>
+    <rect x="1150" y="400" width="300" height="210" rx="12" fill="rgba(167,139,250,0.12)" stroke="#A78BFA" stroke-width="2"/>
+    <text x="1300" y="458" font-size="24" font-weight="700" fill="#F1F5F9" text-anchor="middle">目录层（索引 · 核心）</text>
+    <text x="1300" y="496" font-size="16" fill="#C4B5FD" text-anchor="middle">关键词 / 标签 / 项目 → 笔记 映射</text>
+    <text x="1300" y="528" font-size="15" fill="#94A3B8" text-anchor="middle">只导航，不存内容</text>
+    <text x="1300" y="564" font-size="15" fill="#94A3B8" text-anchor="middle">先查目录 &gt; 直接翻原文</text>
+  </g>
+  <path d="M1210,398 C1225,312 1375,312 1390,398" fill="none" stroke="#FB923C" stroke-width="2" stroke-dasharray="7,6" marker-end="url(#arrowOrange)"/>
+  <text x="1300" y="308" font-size="15" fill="#FB923C" text-anchor="middle">新笔记入库 · 反向更新目录</text>
+
+  <!-- ===== 取 ===== -->
+  <g>
+    <rect x="1620" y="240" width="300" height="90" rx="10" fill="rgba(96,165,250,0.10)" stroke="#60A5FA" stroke-width="1.5"/>
+    <text x="1770" y="280" font-size="22" font-weight="700" fill="#F1F5F9" text-anchor="middle">问答流</text>
+    <text x="1770" y="308" font-size="15" fill="#94A3B8" text-anchor="middle">关键词 → 查目录 → 读笔记 → 回答</text>
+  </g>
+  <g>
+    <rect x="1620" y="430" width="300" height="90" rx="10" fill="rgba(96,165,250,0.10)" stroke="#60A5FA" stroke-width="1.5"/>
+    <text x="1770" y="470" font-size="22" font-weight="700" fill="#F1F5F9" text-anchor="middle">项目总结流</text>
+    <text x="1770" y="498" font-size="15" fill="#94A3B8" text-anchor="middle">读项目页 → 项目总结</text>
+  </g>
+  <g>
+    <rect x="1620" y="620" width="300" height="90" rx="10" fill="rgba(96,165,250,0.10)" stroke="#60A5FA" stroke-width="1.5"/>
+    <text x="1770" y="660" font-size="22" font-weight="700" fill="#F1F5F9" text-anchor="middle">工作总结流</text>
+    <text x="1770" y="688" font-size="15" fill="#94A3B8" text-anchor="middle">手动触发 → 汇总近期笔记 → 周报素材</text>
+  </g>
+
+  <!-- ===== 箭头 ===== -->
+  <line x1="342" y1="345" x2="428" y2="345" stroke="#5B6B82" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="385" y="330" font-size="14" fill="#7E8DA3" text-anchor="middle">读取工具</text>
+  <line x1="692" y1="345" x2="788" y2="345" stroke="#5B6B82" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="740" y="330" font-size="14" fill="#7E8DA3" text-anchor="middle">总结 · 打标签</text>
+  <line x1="920" y1="392" x2="920" y2="468" stroke="#5B6B82" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="935" y="434" font-size="14" fill="#7E8DA3">按项目聚合</text>
+  <line x1="342" y1="685" x2="788" y2="685" stroke="#5B6B82" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="565" y="670" font-size="14" fill="#7E8DA3" text-anchor="middle">直接记录</text>
+
+  <line x1="1052" y1="350" x2="1148" y2="458" stroke="#5B6B82" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="1052" y1="515" x2="1148" y2="510" stroke="#5B6B82" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="1052" y1="682" x2="1148" y2="558" stroke="#5B6B82" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <line x1="1452" y1="455" x2="1618" y2="292" stroke="#5B6B82" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="1452" y1="505" x2="1618" y2="475" stroke="#5B6B82" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="1452" y1="555" x2="1618" y2="660" stroke="#5B6B82" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ===== 图例 ===== -->
+  <g font-size="15" fill="#94A3B8">
+    <rect x="60" y="988" width="16" height="16" rx="3" fill="rgba(45,212,191,0.15)" stroke="#2DD4BF"/>
+    <text x="84" y="1001">进 · 输入</text>
+    <rect x="200" y="988" width="16" height="16" rx="3" fill="rgba(148,163,184,0.15)" stroke="#94A3B8"/>
+    <text x="224" y="1001">原料层</text>
+    <rect x="320" y="988" width="16" height="16" rx="3" fill="rgba(52,211,153,0.15)" stroke="#34D399"/>
+    <text x="344" y="1001">加工层</text>
+    <rect x="440" y="988" width="16" height="16" rx="3" fill="rgba(167,139,250,0.18)" stroke="#A78BFA"/>
+    <text x="464" y="1001">目录层（索引）</text>
+    <rect x="630" y="988" width="16" height="16" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60A5FA"/>
+    <text x="654" y="1001">取 · 输出</text>
+    <line x1="790" y1="996" x2="826" y2="996" stroke="#FB923C" stroke-width="2" stroke-dasharray="6,5"/>
+    <text x="834" y="1001">反向更新</text>
+  </g>
+</svg>
+</body>
+</html>
